@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rita Galkov's Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Rita Galkov</h1>
+        <h2>Software Engineer</h2>
+    </header>
+
+    <section id="about">
+        <h3>About Me</h3>
+        <p>Hi, I'm Rita, a passionate software engineer who graduated from a coding bootcamp. I specialize in backend development using Flask, SQLAlchemy, and PostgreSQL. I also have experience in frontend development with HTML, CSS, and JavaScript. When I'm not coding, I enjoy biking, going to the gym, and practicing martial arts.</p>
+    </section>
+
+    <section id="projects">
+        <h3>Projects</h3>
+        <div class="project">
+            <h4>Project 1: Thrill Tribe</h4>
+            <p>A web application that helps users discover, create, and participate in various activities and events. Built using Flask, SQLAlchemy, and JavaScript.</p>
+            <a href="https://github.com/honeybather/thrill-tribe" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <h4>Project 2: [Another Project Name]</h4>
+            <p>A brief description of your second project.</p>
+            <a href="https://github.com/honeybather/another-project" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h3>Resume</h3>
+        <a href="{{ url_for('static', filename='Rita_Galkov_Resume.pdf') }}" target="_blank">Download Resume</a>
+    </section>
+
+    <section id="contact">
+        <h3>Contact Me</h3>
+        <p><a href="https://www.linkedin.com/in/rita-galkov" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/honeybather" target="_blank">GitHub</a></p>
+        <p><a href="mailto:ritagalkov@example.com">Email Me</a></p>
+    </section>
+</body>
+</html>
