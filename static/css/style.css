@@ -1,0 +1,153 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.logo {
+    width: 63px;
+    height: auto;
+}
+
+#menu-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 400px;
+    background: #FAF9F6;
+    transform: translateX(100%);
+    transition: transform 0.9s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+#menu-container.open {
+    transform: translateX(0);
+}
+
+#menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 10px;
+    background: #d2b1f6;
+    border-radius: 20%;
+    z-index: 1000;
+}
+
+#menu-button-bar {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+#menu-items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+    flex-grow: 1;
+    margin-top: 100px;
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #d2b1f6; /* Underline color */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover::before,
+.menu-item.active::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menu-item.active {
+    color: #d2b1f6; /* Optional: color change for the active item */
+}
+
+#menu-social-container {
+    margin-top: 200px; /* Social Icons Position: Moved the social icons to the bottom of the sidebar */
+    display: flex;
+    justify-content: center; /* Social Icons Position: Ensured they are centered */
+    gap: 15px; /* Social Icons Position: Spaced with gap: 15px */
+}
+
+.social-icon {
+    vertical-align: middle;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#menu-button.change .bar1 {
+    transform: translate(0, 10px) rotate(-45deg);
+}
+
+#menu-button.change .bar2 {
+    opacity: 0;
+}
+
+#menu-button.change .bar3 {
+    transform: translate(0, -10px) rotate(45deg);
+}
+
+#menu-button.change .bar3 {
+    transform: translate(0, -10px) rotate(45deg);
+}
+
+.social-icon {
+    vertical-align: middle;
+    transition: transform 0.3s ease; /* smooth transition for transform */
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); 
+}

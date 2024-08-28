@@ -1,46 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rita Galkov's Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Rita | Creative Developer</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>Rita Galkov</h1>
-        <h2>Software Engineer</h2>
+        <div class="logo-container">
+            <a href="#home">
+                <img src="/static/images/logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
     </header>
 
-    <section id="about">
-        <h3>About Me</h3>
-        <p>Hi, I'm Rita, a passionate software engineer who graduated from a coding bootcamp. I specialize in backend development using Flask, SQLAlchemy, and PostgreSQL. I also have experience in frontend development with HTML, CSS, and JavaScript. When I'm not coding, I enjoy biking, going to the gym, and practicing martial arts.</p>
-    </section>
+    <!-- Menu Button -->
+    <div class="container" id="menu-button">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
 
-    <section id="projects">
-        <h3>Projects</h3>
-        <div class="project">
-            <h4>Project 1: Thrill Tribe</h4>
-            <p>A web application that helps users discover, create, and participate in various activities and events. Built using Flask, SQLAlchemy, and JavaScript.</p>
-            <a href="https://github.com/honeybather/thrill-tribe" target="_blank">View on GitHub</a>
+    <!-- Sidebar Menu -->
+    <div id="menu-container">
+        <div id="menu-content-container">
+            <div id="menu-items-container">
+                <a href="#home" class="menu-item active">Home</a>
+                <a href="#about" class="menu-item">About</a>
+                <a href="#projects" class="menu-item">Projects</a>
+                <a href="#contact" class="menu-item">Contact</a>
+            </div>
+
+            <!-- Social Links -->
+            <div id="menu-social-container">
+                <a tabindex="-1" target="_blank" href="https://x.com/honeybather">
+                    <img class="social-icon" src="/static/images/twitter-icon.png" alt="Twitter Menu Icon" height="28" width="28">
+                </a>
+                <a tabindex="-1" target="_blank" href="https://github.com/honeybather">
+                    <img class="social-icon" alt="Github Menu Icon" height="28" width="28" src="/static/images/github.png">
+                </a>
+                <a tabindex="-1" target="_blank" href="https://www.linkedin.com/in/ritagalkov/">
+                    <img class="social-icon" alt="Linkedin Menu Icon" height="28" width="28" src="/static/images/linkedin.png">
+                </a>
+                <a tabindex="-1" href="mailto:rita.galzour@gmail.com">
+                    <img class="social-icon" alt="Email Menu Icon" height="28" width="28" src="/static/images/mail.png">
+                </a>
+            </div>
         </div>
-        <div class="project">
-            <h4>Project 2: [Another Project Name]</h4>
-            <p>A brief description of your second project.</p>
-            <a href="https://github.com/honeybather/another-project" target="_blank">View on GitHub</a>
-        </div>
-    </section>
+    </div>
 
-    <section id="resume">
-        <h3>Resume</h3>
-        <a href="{{ url_for('static', filename='Rita_Galkov_Resume.pdf') }}" target="_blank">Download Resume</a>
-    </section>
+    <!-- JavaScript for Menu -->
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const menuContainer = document.getElementById('menu-container');
+            menuContainer.classList.toggle('open');
+            this.classList.toggle('change');
+        });
 
-    <section id="contact">
-        <h3>Contact Me</h3>
-        <p><a href="https://www.linkedin.com/in/rita-galkov" target="_blank">LinkedIn</a></p>
-        <p><a href="https://github.com/honeybather" target="_blank">GitHub</a></p>
-        <p><a href="mailto:ritagalkov@example.com">Email Me</a></p>
-    </section>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
