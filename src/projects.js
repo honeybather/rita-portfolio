@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     Backend 🛠️: Flask, SQLAlchemy
                     Frontend 🎨: HTML, CSS, JavaScript
                     Database 🗄️: PostgreSQL </p>
+                    <h3>Portfolio 2024</h3>
+                    <p>My Portfolio website your probarly looking at right now. </p>
+                    <a href="https://github.com/honeybather/rita-portfolio" class="project-link">View Project</a>
+                
                 <p>More to come soon!</p>
 
     `;
