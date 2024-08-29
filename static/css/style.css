@@ -2,8 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: row;
+    scroll-behavior: smooth;  
 }
 
 .logo-container {
@@ -87,7 +86,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 4px;
-    background-color: #d2b1f6; /* Underline color */
+    background-color: #d2b1f6;  
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease;
@@ -100,14 +99,14 @@ body {
 }
 
 .menu-item.active {
-    color: #d2b1f6; /* Optional: color change for the active item */
+    color: #d2b1f6;  
 }
 
 #menu-social-container {
-    margin-top: 200px; /* Social Icons Position: Moved the social icons to the bottom of the sidebar */
+    margin-top: 200px;  
     display: flex;
-    justify-content: center; /* Social Icons Position: Ensured they are centered */
-    gap: 15px; /* Social Icons Position: Spaced with gap: 15px */
+    justify-content: center;  
+    gap: 15px;  
 }
 
 .social-icon {
@@ -145,9 +144,366 @@ body {
 
 .social-icon {
     vertical-align: middle;
-    transition: transform 0.3s ease; /* smooth transition for transform */
+    transition: transform 0.3s ease;  
 }
 
 .social-icon:hover {
     transform: translateY(-5px); 
 }
+
+/* From Uiverse.io by mrhyddenn */ 
+.scrolldown {
+    --color: white;
+    --sizeX: 30px;
+    --sizeY: 50px;
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Positioned at the bottom */
+    left: 50%; /* Centered horizontally */
+    z-index: 1000; /* Ensure it's above other content */
+    width: var(--sizeX);
+    height: var(--sizeY);
+    margin-left: var(sizeX / 2);
+    border: calc(var(--sizeX) / 10) solid var(--color);
+    border-radius: 50px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+  
+  .scrolldown::before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: var(--color);
+    border-radius: 100%;
+    animation: scrolldown-anim 2s infinite;
+    box-sizing: border-box;
+    box-shadow: 0px -5px 3px 1px #2a547066;
+  }
+  
+  @keyframes scrolldown-anim {
+    0% {
+      opacity: 0;
+      height: 6px;
+    }
+  
+    40% {
+      opacity: 1;
+      height: 10px;
+    }
+  
+    80% {
+      transform: translate(0, 20px);
+      height: 10px;
+      opacity: 0;
+    }
+  
+    100% {
+      height: 3px;
+      opacity: 0;
+    }
+  }
+  
+  .chevrons {
+    padding: 6px 0 0 0;
+    margin-left: -3px;
+    margin-top: 48px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chevrondown {
+    margin-top: -6px;
+    position: relative;
+    border: solid var(--color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+  }
+  
+  .chevrondown:nth-child(odd) {
+    animation: pulse54012 500ms ease infinite alternate;
+  }
+  
+  .chevrondown:nth-child(even) {
+    animation: pulse54012 500ms ease infinite alternate 250ms;
+  }
+  
+  @keyframes pulse54012 {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 0.5;
+    }
+  }
+
+/* Hide mouse element on mobile devices */
+@media (max-width: 767px) {
+    .scrolldown {
+        display: none;
+    }
+}
+
+    /* From Uiverse.io by adamgiebl */ 
+    button {
+        font-family: inherit;
+        font-size: 20px;
+        background: royalblue;
+        color: white;
+        padding: 0.7em 1em;
+        padding-left: 0.9em;
+        display: flex;
+        align-items: center;
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+      
+      button span {
+        display: block;
+        margin-left: 0.3em;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      button svg {
+        display: block;
+        transform-origin: center center;
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      button:hover .svg-wrapper {
+        animation: fly-1 0.6s ease-in-out infinite alternate;
+      }
+      
+      button:hover svg {
+        transform: translateX(1.2em) rotate(45deg) scale(1.1);
+      }
+      
+      button:hover span {
+        transform: translateX(5em);
+      }
+      
+      button:active {
+        transform: scale(0.95);
+      }
+      
+      @keyframes fly-1 {
+        from {
+          transform: translateY(0.1em);
+        }
+      
+        to {
+          transform: translateY(-0.1em);
+        }
+      }
+
+
+
+
+
+.profile-picture {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;  
+}
+
+.profile-picture img {
+    width: 300px; 
+    height: 300px; 
+    border-radius: 50%;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.profile-picture img.original {
+    z-index: 1; 
+}
+
+.profile-picture img.replacement {
+    opacity: 0; 
+    z-index: 2; 
+}
+
+.profile-picture:hover img.replacement {
+    opacity: 1;
+}
+
+.connect-button {
+    display: inline-block;
+    padding: 12px 24px; 
+    font-size: 18px;
+    font-family: 'Verdana', sans-serif;
+    font-weight: bold; 
+    color: white;
+    background-color: #a569bd;  
+    border-radius: 12px;  
+    text-decoration: none;
+     
+    transition: all 0.3s ease;
+}
+
+.connect-button:hover {
+    background-color: #8e44ad;  
+}
+
+section {
+    height: 100vh;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+/* Home Section Styles */
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('/static/images/background.jpg') no-repeat center center/cover;
+    color: black;
+}
+
+.profile-text h1 {
+    font-size: 3rem;
+    margin: 0 0 20px 0;
+}
+
+.profile-text h2 {
+    font-size: 1.8rem;
+    margin: 0 0 20px 0;
+}
+
+.connect-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #d2b1f6;
+    border-radius: 5px;
+    text-decoration: none;
+     
+}
+
+.connect-button:hover {
+    background: #b89cfd;
+}
+ 
+
+
+
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ba9df4;
+}
+
+#about .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+ 
+#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dca1dc;
+    color: #333;
+}
+
+#projects .content {
+    max-width: 1000px;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-item {
+    width: 45%;
+    background: #000100;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+ 
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7fdaba;
+    color: #333;
+}
+
+#contact .content {
+    max-width: 600px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+ 

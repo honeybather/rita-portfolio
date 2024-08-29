@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rita | Creative Developer</title>
+    <title>Rita | Software Engineer</title>
     <link rel="icon" type="image/png" href="/static/images/logo.png">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
@@ -38,36 +38,37 @@
             <!-- Social Links -->
             <div id="menu-social-container">
                 <a tabindex="-1" target="_blank" href="https://x.com/honeybather">
-                    <img class="social-icon" src="/static/images/twitter-icon.png" alt="Twitter Menu Icon" height="28" width="28">
+                    <img class="social-icon" src="/static/images/icons/twitter.png" alt="Twitter Menu Icon" height="28" width="28">
                 </a>
                 <a tabindex="-1" target="_blank" href="https://github.com/honeybather">
-                    <img class="social-icon" alt="Github Menu Icon" height="28" width="28" src="/static/images/github.png">
+                    <img class="social-icon" alt="Github Menu Icon" height="28" width="28" src="/static/images/icons/github.png">
                 </a>
                 <a tabindex="-1" target="_blank" href="https://www.linkedin.com/in/ritagalkov/">
-                    <img class="social-icon" alt="Linkedin Menu Icon" height="28" width="28" src="/static/images/linkedin.png">
+                    <img class="social-icon" alt="Linkedin Menu Icon" height="28" width="28" src="/static/images/icons/linkedin.png">
                 </a>
                 <a tabindex="-1" href="mailto:rita.galzour@gmail.com">
-                    <img class="social-icon" alt="Email Menu Icon" height="28" width="28" src="/static/images/mail.png">
+                    <img class="social-icon" alt="Email Menu Icon" height="28" width="28" src="/static/images/icons/mail.png">
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript for Menu -->
-    <script>
-        document.getElementById('menu-button').addEventListener('click', function() {
-            const menuContainer = document.getElementById('menu-container');
-            menuContainer.classList.toggle('open');
-            this.classList.toggle('change');
-        });
 
-        document.querySelectorAll('.menu-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
+    <main>
+        <section id="home"></section>
+        <section id="about"></section>
+        <section id="projects"></section>
+        <section id="contact"></section>
+    </main>
+ 
+
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
+    <script src="{{ url_for('static', filename='about.js') }}"></script>
+    <script src="{{ url_for('static', filename='projects.js') }}"></script>
+    <script src="{{ url_for('static', filename='contact.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='scroll.js') }}"></script>
 
 </body>
 </html>
