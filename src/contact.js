@@ -1,55 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const contactSection = document.getElementById('contact');
-    contactSection.innerHTML = `
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = '/static/css/contact.css';  
+  document.head.appendChild(link);
 
+  const aboutSection = document.getElementById('contact');
+  aboutSection.innerHTML = `
     <div class="contact-section-container" id="contact">
+        <h1>Say hi</h1>
         <h2>Contact Me</h2>
-        
-<style>
-    body {font-family: Arial, Helvetica, sans-serif;}
-    * {box-sizing: border-box;}
-    
-    input[type=text], select, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-top: 6px;
-      margin-bottom: 16px;
-      resize: vertical;
-    }
-    
-    input[type=submit] {
-      background-color: #04AA6D;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-    
-    .container {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-    </style>
     </head>
     <body>
-
-    
+   
     <div class="container">
-      <form action="/action_page.php">
+      <form action="/submit_form" method="POST">
         <label for="fname"> Name:</label>
         <input type="text" id="fname" name="firstname">
     
         <label for="lname">Email:</label>
-        <input type="text" id="lname" name="lastname">
+        <input type="text" id="lname" name="email">
     
         <label for="subject">Message:</label>
         <textarea id="subject" name="subject" style="height:200px"></textarea>
@@ -73,11 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <span>Send</span>
     </button>
-    
-    <style>
-
-    
-    </style>
 
     `;
 });

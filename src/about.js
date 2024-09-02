@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/static/css/about.css';  
+    document.head.appendChild(link);
+
     const aboutSection = document.getElementById('about');
     aboutSection.innerHTML = `
     
@@ -14,16 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </ul>
     <p>Inspired by my family, I began this journey into software development, and it has sparked a deep passion for creating and enhancing applications that connect people. I’m excited to tackle new challenges and continue growing as a web developer.</p>
     <a href="/static/documents/Rita_Resume.pdf" class="resume-download">2024 CV - Resume</a>
-
-    <!-- Hobbies Section
-    <div class="hobbies-container">
-        <h3>My Hobbies</h3>
-        <img src="/static/images/gifs/boxing.gif" alt="Boxing GIF">
-        <img src="/static/images/gifs/biking.gif" alt="Biking GIF">
-        <img src="/static/images/gifs/hiking.gif" alt="Hiking GIF">
-        <img src="/static/images/gifs/gym.gif" alt="Gym GIF">
-    </div>
-</div> -->
+    </div> 
         
     `;
 });

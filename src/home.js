@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/static/css/home.css';  
+    document.head.appendChild(link);
+
     const homeSection = document.getElementById('home');
     homeSection.innerHTML = `
         <div class="profile-section-container">
